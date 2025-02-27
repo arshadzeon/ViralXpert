@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import joblib
+import pickle
 
 app = FastAPI()
 
-# Load trained model
-model = joblib.load("../model/viral_predictor_model.pkl")
-
+with open("../model/viral_predictor_model.pkl", "rb") as f:
+    model = pickle.load(f)
+    
 # Define input schema
 class TweetData(BaseModel):
     text: str

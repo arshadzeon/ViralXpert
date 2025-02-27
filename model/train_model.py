@@ -25,7 +25,7 @@ preprocessor = ColumnTransformer(
         ('cat', categorical_transformer, categorical_features)
     ])
 
-# Define model pipeline
+
 model = Pipeline(steps=[
     ('preprocessor', preprocessor),
     ('classifier', RandomForestClassifier(n_estimators=100, random_state=42))

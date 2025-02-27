@@ -27,8 +27,3 @@ def engineer_features(df):
     
     return df_features
 
-# Example usage
-if __name__ == "__main__":
-    df = pd.read_csv("../data/tweets.csv")
-    engineered_df = engineer_features(df)
-    engineered_df.to_csv("../data/processed_tweets.csv", index=False)
