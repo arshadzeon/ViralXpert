@@ -1,10 +1,14 @@
+import os
+import pickle
 from fastapi import FastAPI
 from pydantic import BaseModel
-import pickle
 
 app = FastAPI()
 
-with open("../model/viral_predictor_model.pkl", "rb") as f:
+# Build the path dynamically
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "../model/viral_predictor_model.pkl")
+
+with open("model/viral_predictor_model.pkl", "rb") as f:
     model = pickle.load(f)
     
 # Define input schema
